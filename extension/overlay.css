@@ -1,0 +1,93 @@
+/* Scoped hard: this CSS is injected into arbitrary pages, so every rule is
+   namespaced under #veritas-panel and all inherited properties are reset. */
+
+#veritas-panel {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 400px;
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  z-index: 2147483647;
+  background: #16191f;
+  color: #e8e6e1;
+  border: 1px solid #272c36;
+  border-top: 3px solid #c9a227;
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  font: 400 14px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  text-align: left;
+  padding: 16px 18px 18px;
+  box-sizing: border-box;
+}
+#veritas-panel * { box-sizing: border-box; margin: 0; padding: 0; font-family: inherit; }
+
+#veritas-panel .veritas-head { display: flex; justify-content: space-between; align-items: center; }
+#veritas-panel .veritas-brand {
+  font-family: Georgia, "Times New Roman", serif; font-size: 17px; letter-spacing: .4px;
+}
+#veritas-panel .veritas-brand b { color: #c9a227; font-weight: 400; }
+#veritas-panel .veritas-close {
+  background: none; border: 0; color: #8b93a1; font-size: 22px; line-height: 1;
+  cursor: pointer; padding: 0 4px;
+}
+#veritas-panel .veritas-close:hover { color: #e8e6e1; }
+
+#veritas-panel .veritas-claim {
+  font-family: Georgia, serif; font-style: italic; color: #cfccc5;
+  margin: 10px 0 14px; padding-bottom: 12px; border-bottom: 1px solid #272c36;
+}
+
+#veritas-panel .veritas-verdict { font-family: Georgia, serif; font-size: 30px; letter-spacing: .5px; }
+#veritas-panel .veritas-meter {
+  height: 7px; background: #23272f; border-radius: 99px; overflow: hidden; margin: 10px 0 6px;
+}
+#veritas-panel .veritas-meter i { display: block; height: 100%; border-radius: 99px; }
+#veritas-panel .veritas-score {
+  display: flex; justify-content: space-between; font-size: 12px; color: #8b93a1;
+}
+#veritas-panel .veritas-reason { font-family: Georgia, serif; margin: 12px 0; color: #d8d5cf; font-size: 14px; }
+
+#veritas-panel .veritas-audit {
+  font-size: 12.5px; padding: 8px 11px; border-radius: 6px; margin: 12px 0;
+}
+#veritas-panel .veritas-audit.clean { background: #14251b; color: #8fd0a8; }
+#veritas-panel .veritas-audit.dirty { background: #2a1618; color: #f0b7b3; }
+
+#veritas-panel .veritas-brief {
+  border-left: 3px solid #272c36; padding: 9px 0 9px 11px; margin-top: 10px; background: #12151a;
+  border-radius: 0 6px 6px 0;
+}
+#veritas-panel .veritas-brief.pro { border-left-color: #e0574f; }
+#veritas-panel .veritas-brief.def { border-left-color: #4caf7d; }
+#veritas-panel .veritas-brief-h {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #8b93a1; margin-bottom: 6px;
+}
+#veritas-panel .veritas-brief-h span { font-size: 17px; color: #e8e6e1; text-transform: none; letter-spacing: 0; }
+#veritas-panel .veritas-brief-h small { font-size: 10px; color: #5b6373; }
+#veritas-panel ul { list-style: none; }
+#veritas-panel .veritas-brief li { font-size: 13px; margin-bottom: 7px; color: #cfccc5; }
+#veritas-panel .veritas-src { display: block; color: #5b6373; font-size: 11.5px; }
+
+#veritas-panel .veritas-nuance { margin-top: 14px; font-size: 13px; }
+#veritas-panel .veritas-nuance b {
+  display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+  color: #8b93a1; margin-bottom: 6px; font-weight: 400;
+}
+#veritas-panel .veritas-nuance li { margin-bottom: 6px; padding-left: 12px; position: relative; color: #cfccc5; }
+#veritas-panel .veritas-nuance li::before { content: "•"; position: absolute; left: 0; color: #5b6373; }
+
+#veritas-panel .veritas-wait { padding: 22px 0; text-align: center; color: #8b93a1; }
+#veritas-panel .veritas-sub { font-size: 11.5px; color: #5b6373; margin-top: 6px; }
+#veritas-panel .veritas-spin {
+  display: inline-block; width: 11px; height: 11px; border: 2px solid #3a3f4b;
+  border-top-color: #c9a227; border-radius: 50%; animation: veritas-spin 0.8s linear infinite;
+  vertical-align: -1px; margin-right: 6px;
+}
+@keyframes veritas-spin { to { transform: rotate(360deg); } }
+
+#veritas-panel .veritas-err {
+  background: #2a1618; border: 1px solid #4a2529; color: #f0b7b3;
+  padding: 12px 14px; border-radius: 6px; font-size: 13px;
+}

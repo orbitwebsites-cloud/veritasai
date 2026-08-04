@@ -1,0 +1,8 @@
+# VeritasAI runs on three libraries. The web UI is stdlib http.server on
+# purpose — no framework, no build step, no node_modules.
+openai>=1.40          # OpenAI wire format: also drives Cerebras, Groq, Together
+python-dotenv>=1.0    # .env loading
+rich>=13.0            # CLI rendering
+
+# Optional — only needed if you set ANTHROPIC_API_KEY
+anthropic>=0.40

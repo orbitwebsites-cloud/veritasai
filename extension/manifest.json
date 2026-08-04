@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "VeritasAI — put a claim on trial",
+  "version": "1.0.0",
+  "description": "Select any claim on any page and put it before a five-model adversarial tribunal.",
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "VeritasAI" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

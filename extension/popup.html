@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    width: 280px; margin: 0; padding: 16px;
+    background: #16191f; color: #e8e6e1;
+    font: 400 13px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font: 400 19px Georgia, serif; margin: 0 0 2px; }
+  h1 b { color: #c9a227; font-weight: 400; }
+  p { color: #8b93a1; font-size: 12px; margin: 0 0 14px; }
+  label { display: block; font-size: 11px; text-transform: uppercase;
+          letter-spacing: 1px; color: #5b6373; margin-bottom: 5px; }
+  input {
+    width: 100%; background: #0e1013; border: 1px solid #272c36; color: #e8e6e1;
+    padding: 8px 10px; border-radius: 6px; font-size: 13px; box-sizing: border-box;
+  }
+  input:focus { outline: none; border-color: #c9a227; }
+  button {
+    width: 100%; margin-top: 10px; background: #c9a227; color: #17140a; border: 0;
+    padding: 9px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 13px;
+  }
+  #status { margin-top: 10px; font-size: 12px; min-height: 16px; }
+  .ok { color: #4caf7d; } .bad { color: #e0574f; }
+  .hint { color: #5b6373; font-size: 11px; margin-top: 12px; line-height: 1.45; }
+  code { background: #0e1013; padding: 1px 4px; border-radius: 3px; color: #9dc0e8; }
+</style>
+</head>
+<body>
+  <h1>Veritas<b>AI</b></h1>
+  <p>Select text on any page, right-click, and put it on trial.</p>
+
+  <label for="server">Server</label>
+  <input id="server" type="text" spellcheck="false" placeholder="http://127.0.0.1:8000">
+  <button id="save">Save &amp; test connection</button>
+  <div id="status"></div>
+
+  <div class="hint">
+    Runs entirely against your own machine. Start the server with
+    <code>python web.py</code> in the VeritasAI folder.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
